@@ -1,0 +1,27 @@
+[package]
+name = "SCiPIndex-TUI"
+version = "0.1.1"
+edition = "2021"
+license = "MIT"
+description = "A terminal-based user interface for reading SCP Foundation entries"
+repository = "https://github.com/OasisVee/scipindex-tui"
+readme = "README.md"
+keywords = ["scp", "tui", "terminal", "wiki", "foundation"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "scipindex"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+crossterm = "0.28"
+ratatui = "0.29.0"
+reqwest = { version = "0.12", features = [
+  "blocking",
+] } # Blocking is fine for this simple app, simplifies TUI state slightly or we can use tokio
+scraper = "0.21.0"
+textwrap = "0.16"
+directories = "5.0"
+rand = "0.8"
+regex = "1.10"
